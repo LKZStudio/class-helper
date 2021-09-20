@@ -48,6 +48,7 @@
     "cross-env": "7.0.3",
     "css-loader": "^6.3.0",
     "electron": "13.1.2",
+    "electron-packager": "^15.4.0",
     "eslint": "7.29.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-config-standard": "16.0.3",
@@ -100,7 +101,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "班级工具"
+            "name": "Class Helper"
           }
         },
         {

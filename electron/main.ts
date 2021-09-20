@@ -32,9 +32,9 @@ function createWindow () {
   })
 
   Menu.setApplicationMenu(null)
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 
-  mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY + "/#/index")
+  mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY + "#/index")
 
   mainWindow.on('close', (e) => {
     if (!forceClose) {
@@ -63,7 +63,7 @@ function createCalendarWindow() {
     }
   })
 
-  calendarWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY + "/#/calendar")
+  calendarWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY + "#/calendar")
 
   calendarWindow.on('closed', () => {
     calendarWindow = null
@@ -83,7 +83,7 @@ function createRandomWindow() {
     }
   })
 
-  randomWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY + "/#/random")
+  randomWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY + "#/random")
   
   randomWindow.on('closed', () => {
     randomWindow = null
