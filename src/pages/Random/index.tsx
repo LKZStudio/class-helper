@@ -4,41 +4,20 @@ import { useState, useEffect } from 'react'
 let _isRandoming = false
 export function Random() {
   const [nowName, setNowName] = useState("敬请期待")
-  const [nameList, setNameList] = useState([] as string[])
+  const [nameList, setNameList] = useState(window.Main.getConfigData().names)
   const [needRepeat, setNeedRepeat] = useState(false)
   const [isRandoming, setIsRandoming] = useState(false)
   const [nowOrder, setNowOrder] = useState(0)
+  const [trigger, setTrigger] = useState(false)
 
-  function addOrder() {
-    const nowOrder = getNowOrder()
-    const nameList = getNameList()
-    console.log(nowOrder, nameList.length)
-    if (nowOrder >= nameList.length) {
-      setSetNowOrder(0)
-    } else {
-      setSetNowOrder(nowOrder + 1)
-    }
-    if (_isRandoming) {
-      setTimeout(addOrder, 2000)
-    }
-  }
-
-  function setSetNowOrder(value: number) {
-    setNowOrder(value)
-  }
-
-  function getNowOrder() {
-    return nowOrder
-  }
-
-  function getNameList() {
-    return nameList
+  function toggleTrigger() {
+    setTrigger(!trigger)
   }
 
   function start() {
     setIsRandoming(true)
     _isRandoming = true
-    setTimeout(addOrder, 2000)
+    toggleTrigger()
   }
 
   function stop() {
@@ -107,6 +86,17 @@ export function Random() {
       setNowName(nameList[nowOrder])
     }
   }, [nowOrder])
+
+  useEffect(() => {
+    if (_isRandoming) {
+      if (nowOrder >= (nameList.length - 1)) {
+        setNowOrder(0)
+      } else {
+        setNowOrder(nowOrder + 1)
+      }
+      setTimeout(toggleTrigger, 80)
+    }
+  }, [trigger])
 
   return (
     <div className="random">

@@ -72,8 +72,7 @@
         "executableName": "class-helper",
         "icon": "assets/icon",
         "extraResource": [
-          "assets",
-          "database"
+          "assets"
         ]
       },
       "plugins": [

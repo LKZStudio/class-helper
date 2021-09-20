@@ -10,6 +10,7 @@ export function Index() {
   const [name, setName] = useState("")
   const [order, setOrder] = useState(0)
   const [newOrder, setNewOrder] = useState(0)
+  const [ord, setOrd] = useState(0)
 
   function changeNotice(text: string) {
     setNotice(text)
@@ -94,6 +95,20 @@ export function Index() {
     changeNotice("更换顺序成功")
   }
 
+  function submitOrd(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    e.preventDefault()
+    if ((ord - 1) > names.length || ord < 1) {
+      changeNotice("超出序号范围！")
+      return
+    }
+    let nowNames: string[] = JSON.parse(JSON.stringify(names))
+    nowNames.splice(ord - 1, 1)
+    setNames(nowNames)
+    window.Main.changeNames(nowNames)
+    setOrd(0)
+    changeNotice("删除成功")
+  }
+
   function getNowDate() {
     const nowDate = new Date(window.Main.getConfigData().date)
     return `${nowDate.getFullYear()}-${getLengthChar(2, nowDate.getMonth() + 1)}-${getLengthChar(2, nowDate.getDate())}`
@@ -138,7 +153,7 @@ export function Index() {
       <button onClick={changeNowPage('about')}>关于</button>
       <p className="notice">{notice}</p>
       <div className="timer" style={getNotNowPageStyle('timer')}>
-        <input type="date" onChange={changeDate} defaultValue={getNowDate()} />
+        <input type="date" onChange={changeDate} defaultValue={getNowDate()} /><br />
       </div>
 
       <div className="name" style={getNotNowPageStyle('name')}>
@@ -154,6 +169,12 @@ export function Index() {
           <label htmlFor="name">姓名（“|”分割多个名字）：</label>
           <input type="text" name="name" value={name} onChange={e => {changeInput(e, setName)}} />
           <button type="submit" onClick={submitName}>添加</button>
+        </form>
+        <form>
+          <h4>删除名字</h4>
+          <label htmlFor="ord">序号：</label>
+          <input type="text" name="ord" value={ord} onChange={e => {changeInput(e, setOrd)}} />
+          <button type="submit" onClick={submitOrd}>删除</button>
         </form>
         <form>
           <h4>更换顺序</h4>
