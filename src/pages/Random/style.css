@@ -1,0 +1,40 @@
+
+.random {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.random h2 {
+  text-align: center;
+  color: darkorchid;
+}
+
+.random .goal {
+  text-align: center;
+}
+
+.random button {
+  display: block;
+  width: 100%;
+}
+
+.random .main {
+  height: 100px;
+  margin-bottom: 16px;
+  background-color: white;
+  border: 5px solid #1B9AF7;
+  box-shadow: 4px 4px 0px #1169a888;
+  border-radius: 10px;
+  font-size: 32px;
+  transition: 0.3s ease-in-out;
+}
+
+.random .main:hover {
+  background-color: #60b8f7;
+  border: 5px solid #60b8f7;
+  box-shadow: none;
+}
+
+.random .refresh {
+  height: 32px;
+}

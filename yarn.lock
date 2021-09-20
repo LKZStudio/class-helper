@@ -1154,6 +1154,13 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.13":
+  version "7.15.4"
+  resolved "https://registry.nlark.com/@babel/runtime/download/@babel/runtime-7.15.4.tgz?cache=0&sync_timestamp=1630618785994&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.15.4.tgz#fd17d16bfdf878e6dd02d19753a39fa8a8d9c84a"
+  integrity sha1-/RfRa/34eObdAtGXU6OfqKjZyEo=
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.10.2", "@babel/runtime@^7.8.4":
   version "7.10.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.3.tgz#670d002655a7c366540c67f6fd3342cd09500364"
@@ -2064,6 +2071,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/history@*":
+  version "4.7.9"
+  resolved "https://registry.nlark.com/@types/history/download/@types/history-4.7.9.tgz#1cfb6d60ef3822c589f18e70f8b12f9a28ce8724"
+  integrity sha1-HPttYO84IsWJ8Y5w+LEvmijOhyQ=
+
 "@types/hoist-non-react-statics@*":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
@@ -2184,6 +2196,23 @@
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.8.tgz#3180de6d79bf53762001ad854e3ce49f36dd71fc"
   integrity sha512-0ohAiJAx1DAUEcY9UopnfwCE9sSMDGnY/oXjWMax6g3RpzmTt2GMyMVAXcbn0mo8XAff0SbQJl2/SBU+hjSZ1A==
   dependencies:
+    "@types/react" "*"
+
+"@types/react-router-dom@^5.1.9":
+  version "5.1.9"
+  resolved "https://registry.nlark.com/@types/react-router-dom/download/@types/react-router-dom-5.1.9.tgz?cache=0&sync_timestamp=1631629969873&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Freact-router-dom%2Fdownload%2F%40types%2Freact-router-dom-5.1.9.tgz#e8a8f687351ecc8c68bb4161d7e4b9df4994416e"
+  integrity sha1-6Kj2hzUezIxou0Fh1+S530mUQW4=
+  dependencies:
+    "@types/history" "*"
+    "@types/react" "*"
+    "@types/react-router" "*"
+
+"@types/react-router@*":
+  version "5.1.16"
+  resolved "https://registry.nlark.com/@types/react-router/download/@types/react-router-5.1.16.tgz?cache=0&sync_timestamp=1629709006999&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Freact-router%2Fdownload%2F%40types%2Freact-router-5.1.16.tgz#f3ba045fb96634e38b21531c482f9aeb37608a99"
+  integrity sha1-87oEX7lmNOOLIVMcSC+a6zdgipk=
+  dependencies:
+    "@types/history" "*"
     "@types/react" "*"
 
 "@types/react@*":
@@ -3586,6 +3615,20 @@ css-color-keywords@^1.0.0:
   resolved "https://registry.yarnpkg.com/css-color-keywords/-/css-color-keywords-1.0.0.tgz#fea2616dc676b2962686b3af8dbdbe180b244e05"
   integrity sha1-/qJhbcZ2spYmhrOvjb2+GAskTgU=
 
+css-loader@^6.3.0:
+  version "6.3.0"
+  resolved "https://registry.nlark.com/css-loader/download/css-loader-6.3.0.tgz#334d3500ff0a0c14cfbd4b0670088dbb5b5c1530"
+  integrity sha1-M001AP8KDBTPvUsGcAiNu1tcFTA=
+  dependencies:
+    icss-utils "^5.1.0"
+    postcss "^8.2.15"
+    postcss-modules-extract-imports "^3.0.0"
+    postcss-modules-local-by-default "^4.0.0"
+    postcss-modules-scope "^3.0.0"
+    postcss-modules-values "^4.0.0"
+    postcss-value-parser "^4.1.0"
+    semver "^7.3.5"
+
 css-select@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/css-select/-/css-select-1.2.0.tgz#2b3a110539c5355f1cd8d314623e870b121ec858"
@@ -3623,6 +3666,11 @@ css@^3.0.0:
     inherits "^2.0.4"
     source-map "^0.6.1"
     source-map-resolve "^0.6.0"
+
+cssesc@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/cssesc/download/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
+  integrity sha1-N3QZGZA7hoVl4cCep0dEXNGJg+4=
 
 cssom@^0.4.4:
   version "0.4.4"
@@ -5320,7 +5368,19 @@ he@^1.2.0:
   resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
 
-hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.3.0:
+history@^4.9.0:
+  version "4.10.1"
+  resolved "https://registry.nlark.com/history/download/history-4.10.1.tgz?cache=0&sync_timestamp=1628891129290&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fhistory%2Fdownload%2Fhistory-4.10.1.tgz#33371a65e3a83b267434e2b3f3b1b4c58aad4cf3"
+  integrity sha1-MzcaZeOoOyZ0NOKz87G0xYqtTPM=
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    loose-envify "^1.2.0"
+    resolve-pathname "^3.0.0"
+    tiny-invariant "^1.0.2"
+    tiny-warning "^1.0.0"
+    value-equal "^1.0.1"
+
+hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.1.0, hoist-non-react-statics@^3.3.0:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
   integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
@@ -5514,6 +5574,11 @@ iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4:
   integrity sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
+
+icss-utils@^5.0.0, icss-utils@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.npm.taobao.org/icss-utils/download/icss-utils-5.1.0.tgz#c6be6858abd013d768e98366ae47e25d5887b1ae"
+  integrity sha1-xr5oWKvQE9do6YNmrkfiXViHsa4=
 
 ieee754@^1.1.13:
   version "1.2.1"
@@ -6759,7 +6824,7 @@ log-symbols@^4.0.0, log-symbols@^4.1.0:
     chalk "^4.1.0"
     is-unicode-supported "^0.1.0"
 
-loose-envify@^1.1.0, loose-envify@^1.4.0:
+loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.3.1, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -6998,6 +7063,14 @@ min-indent@^1.0.0:
   resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.1.tgz#a63f681673b30571fbe8bc25686ae746eefa9869"
   integrity sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==
 
+mini-create-react-context@^0.4.0:
+  version "0.4.1"
+  resolved "https://registry.npm.taobao.org/mini-create-react-context/download/mini-create-react-context-0.4.1.tgz?cache=0&sync_timestamp=1603390124779&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmini-create-react-context%2Fdownload%2Fmini-create-react-context-0.4.1.tgz#072171561bfdc922da08a60c2197a497cc2d1d5e"
+  integrity sha1-ByFxVhv9ySLaCKYMIZekl8wtHV4=
+  dependencies:
+    "@babel/runtime" "^7.12.1"
+    tiny-warning "^1.0.3"
+
 minimalistic-assert@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz#2e194de044626d4a10e7f7fbc00ce73e83e4d5c7"
@@ -7089,6 +7162,11 @@ mute-stream@0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.8.tgz#1630c42b2251ff81e2a283de96a5497ea92e5e0d"
   integrity sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==
+
+nanoid@^3.1.23:
+  version "3.1.25"
+  resolved "https://registry.nlark.com/nanoid/download/nanoid-3.1.25.tgz?cache=0&sync_timestamp=1628771905854&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fnanoid%2Fdownload%2Fnanoid-3.1.25.tgz#09ca32747c0e543f0e1814b7d3793477f9c8e152"
+  integrity sha1-CcoydHwOVD8OGBS303k0d/nI4VI=
 
 natural-compare@^1.4.0:
   version "1.4.0"
@@ -7743,6 +7821,13 @@ path-to-regexp@0.1.7:
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
   integrity sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
 
+path-to-regexp@^1.7.0:
+  version "1.8.0"
+  resolved "https://registry.nlark.com/path-to-regexp/download/path-to-regexp-1.8.0.tgz?cache=0&sync_timestamp=1618846809278&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpath-to-regexp%2Fdownload%2Fpath-to-regexp-1.8.0.tgz#887b3ba9d84393e87a0a0b9f4cb756198b53548a"
+  integrity sha1-iHs7qdhDk+h6CgufTLdWGYtTVIo=
+  dependencies:
+    isarray "0.0.1"
+
 path-type@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-1.1.0.tgz#59c44f7ee491da704da415da5a4070ba4f8fe441"
@@ -7864,10 +7949,55 @@ portfinder@^1.0.28:
     debug "^3.1.1"
     mkdirp "^0.5.5"
 
-postcss-value-parser@^4.0.2:
+postcss-modules-extract-imports@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.nlark.com/postcss-modules-extract-imports/download/postcss-modules-extract-imports-3.0.0.tgz#cda1f047c0ae80c97dbe28c3e76a43b88025741d"
+  integrity sha1-zaHwR8CugMl9vijD52pDuIAldB0=
+
+postcss-modules-local-by-default@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npm.taobao.org/postcss-modules-local-by-default/download/postcss-modules-local-by-default-4.0.0.tgz?cache=0&sync_timestamp=1602587568476&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss-modules-local-by-default%2Fdownload%2Fpostcss-modules-local-by-default-4.0.0.tgz#ebbb54fae1598eecfdf691a02b3ff3b390a5a51c"
+  integrity sha1-67tU+uFZjuz99pGgKz/zs5ClpRw=
+  dependencies:
+    icss-utils "^5.0.0"
+    postcss-selector-parser "^6.0.2"
+    postcss-value-parser "^4.1.0"
+
+postcss-modules-scope@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/postcss-modules-scope/download/postcss-modules-scope-3.0.0.tgz?cache=0&sync_timestamp=1602593203693&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss-modules-scope%2Fdownload%2Fpostcss-modules-scope-3.0.0.tgz#9ef3151456d3bbfa120ca44898dfca6f2fa01f06"
+  integrity sha1-nvMVFFbTu/oSDKRImN/Kby+gHwY=
+  dependencies:
+    postcss-selector-parser "^6.0.4"
+
+postcss-modules-values@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npm.taobao.org/postcss-modules-values/download/postcss-modules-values-4.0.0.tgz?cache=0&sync_timestamp=1602586308035&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss-modules-values%2Fdownload%2Fpostcss-modules-values-4.0.0.tgz#d7c5e7e68c3bb3c9b27cbf48ca0bb3ffb4602c9c"
+  integrity sha1-18Xn5ow7s8myfL9Iyguz/7RgLJw=
+  dependencies:
+    icss-utils "^5.0.0"
+
+postcss-selector-parser@^6.0.2, postcss-selector-parser@^6.0.4:
+  version "6.0.6"
+  resolved "https://registry.nlark.com/postcss-selector-parser/download/postcss-selector-parser-6.0.6.tgz?cache=0&sync_timestamp=1620752939806&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpostcss-selector-parser%2Fdownload%2Fpostcss-selector-parser-6.0.6.tgz#2c5bba8174ac2f6981ab631a42ab0ee54af332ea"
+  integrity sha1-LFu6gXSsL2mBq2MaQqsO5UrzMuo=
+  dependencies:
+    cssesc "^3.0.0"
+    util-deprecate "^1.0.2"
+
+postcss-value-parser@^4.0.2, postcss-value-parser@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.1.0.tgz#443f6a20ced6481a2bda4fa8532a6e55d789a2cb"
   integrity sha512-97DXOFbQJhk71ne5/Mt6cOu6yxsSfM0QGQyl0L25Gca4yGWEGJaig7l7gbCX623VqTBNGLRLaVUCnNkcedlRSQ==
+
+postcss@^8.2.15:
+  version "8.3.6"
+  resolved "https://registry.nlark.com/postcss/download/postcss-8.3.6.tgz?cache=0&sync_timestamp=1626882933935&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpostcss%2Fdownload%2Fpostcss-8.3.6.tgz#2730dd76a97969f37f53b9a6096197be311cc4ea"
+  integrity sha1-JzDddql5afN/U7mmCWGXvjEcxOo=
+  dependencies:
+    colorette "^1.2.2"
+    nanoid "^3.1.23"
+    source-map-js "^0.6.2"
 
 prelude-ls@^1.2.1:
   version "1.2.1"
@@ -7985,7 +8115,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.4"
 
-prop-types@^15.6.1, prop-types@^15.7.2:
+prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -8115,7 +8245,7 @@ react-hot-loader@4.13.0:
     shallowequal "^1.1.0"
     source-map "^0.7.3"
 
-react-is@^16.12.0, react-is@^16.7.0, react-is@^16.8.1:
+react-is@^16.12.0, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
@@ -8129,6 +8259,35 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-router-dom@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.nlark.com/react-router-dom/download/react-router-dom-5.3.0.tgz?cache=0&sync_timestamp=1631318942876&other_urls=https%3A%2F%2Fregistry.nlark.com%2Freact-router-dom%2Fdownload%2Freact-router-dom-5.3.0.tgz#da1bfb535a0e89a712a93b97dd76f47ad1f32363"
+  integrity sha1-2hv7U1oOiacSqTuX3Xb0etHzI2M=
+  dependencies:
+    "@babel/runtime" "^7.12.13"
+    history "^4.9.0"
+    loose-envify "^1.3.1"
+    prop-types "^15.6.2"
+    react-router "5.2.1"
+    tiny-invariant "^1.0.2"
+    tiny-warning "^1.0.0"
+
+react-router@5.2.1:
+  version "5.2.1"
+  resolved "https://registry.nlark.com/react-router/download/react-router-5.2.1.tgz#4d2e4e9d5ae9425091845b8dbc6d9d276239774d"
+  integrity sha1-TS5OnVrpQlCRhFuNvG2dJ2I5d00=
+  dependencies:
+    "@babel/runtime" "^7.12.13"
+    history "^4.9.0"
+    hoist-non-react-statics "^3.1.0"
+    loose-envify "^1.3.1"
+    mini-create-react-context "^0.4.0"
+    path-to-regexp "^1.7.0"
+    prop-types "^15.6.2"
+    react-is "^16.6.0"
+    tiny-invariant "^1.0.2"
+    tiny-warning "^1.0.0"
 
 react@17.0.2:
   version "17.0.2"
@@ -8431,6 +8590,11 @@ resolve-package@^1.0.1:
   integrity sha1-aG9wsYi9fWdfW7xCgszaBgq7nSc=
   dependencies:
     get-installed-path "^2.0.3"
+
+resolve-pathname@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/resolve-pathname/download/resolve-pathname-3.0.0.tgz#99d02224d3cf263689becbb393bc560313025dcd"
+  integrity sha1-mdAiJNPPJjaJvsuzk7xWAxMCXc0=
 
 resolve@^1.1.6, resolve@^1.14.2, resolve@^1.20.0:
   version "1.20.0"
@@ -8809,6 +8973,11 @@ source-list-map@^2.0.1:
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-2.0.1.tgz#3993bd873bfc48479cca9ea3a547835c7c154b34"
   integrity sha512-qnQ7gVMxGNxsiL4lEuJwe/To8UnK7fAnmbGEEH8RpLouuKbeEm0lhbQVFIrNSuB+G7tVrAlVsZgETT5nljf+Iw==
 
+source-map-js@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.npm.taobao.org/source-map-js/download/source-map-js-0.6.2.tgz#0bb5de631b41cfbda6cfba8bd05a80efdfd2385e"
+  integrity sha1-C7XeYxtBz72mz7qL0FqA79/SOF4=
+
 source-map-resolve@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/source-map-resolve/-/source-map-resolve-0.6.0.tgz#3d9df87e236b53f16d01e58150fc7711138e5ed2"
@@ -9127,6 +9296,11 @@ strip-outer@^1.0.1:
   dependencies:
     escape-string-regexp "^1.0.2"
 
+style-loader@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.nlark.com/style-loader/download/style-loader-3.2.1.tgz?cache=0&sync_timestamp=1626796752210&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fstyle-loader%2Fdownload%2Fstyle-loader-3.2.1.tgz#63cb920ec145c8669e9a50e92961452a1ef5dcde"
+  integrity sha1-Y8uSDsFFyGaemlDpKWFFKh713N4=
+
 styled-components@5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-5.3.0.tgz#e47c3d3e9ddfff539f118a3dd0fd4f8f4fb25727"
@@ -9323,6 +9497,16 @@ tiny-each-async@2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/tiny-each-async/-/tiny-each-async-2.0.3.tgz#8ebbbfd6d6295f1370003fbb37162afe5a0a51d1"
   integrity sha1-jru/1tYpXxNwAD+7NxYq/loKUdE=
+
+tiny-invariant@^1.0.2:
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/tiny-invariant/download/tiny-invariant-1.1.0.tgz#634c5f8efdc27714b7f386c35e6760991d230875"
+  integrity sha1-Y0xfjv3CdxS384bDXmdgmR0jCHU=
+
+tiny-warning@^1.0.0, tiny-warning@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npm.taobao.org/tiny-warning/download/tiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
+  integrity sha1-lKMNtFPfTGQ9D9VmBg1gqHXYR1Q=
 
 tmp-promise@^1.0.5:
   version "1.1.0"
@@ -9639,7 +9823,7 @@ utf8-byte-length@^1.0.1:
   resolved "https://registry.yarnpkg.com/utf8-byte-length/-/utf8-byte-length-1.0.4.tgz#f45f150c4c66eee968186505ab93fcbb8ad6bf61"
   integrity sha1-9F8VDExm7uloGGUFq5P8u4rWv2E=
 
-util-deprecate@^1.0.1, util-deprecate@~1.0.1:
+util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
@@ -9680,6 +9864,11 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+value-equal@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/value-equal/download/value-equal-1.0.1.tgz#1e0b794c734c5c0cade179c437d356d931a34d6c"
+  integrity sha1-Hgt5THNMXAyt4XnEN9NW2TGjTWw=
 
 vary@~1.1.2:
   version "1.1.2"

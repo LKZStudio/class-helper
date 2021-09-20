@@ -1,0 +1,13 @@
+
+.index h1 {
+  margin-bottom: 0;
+}
+
+.index .notice {
+  color: green;
+}
+
+.index h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
