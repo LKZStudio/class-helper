@@ -1,6 +1,6 @@
-## Electron + TypeScript + React
+## Class Helper
 
-Boilerplate for a project using Electron, React and Typescript.
+A tool helps teachers teach, which can be installed in the computer in the class.
 
 ## Installation
 
@@ -29,6 +29,8 @@ yarn package
 ## Contributing
 
 Pull requests are always welcome 😃.
+
+Issues are always welcome too.
 
 ## License
 
