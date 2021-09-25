@@ -13,5 +13,7 @@ export interface Config {
   date: number // 倒计时时间戳
 }
 
-console.log(assetsPath)
-export const ConfigDb = new Database<Config>(path.join(database, 'Config.json'), { randomType: 0, names: [], date: 1111111111111 });
+export const ConfigDb = new Database<Config>(
+  path.join(database, 'Config.json'), 
+  { randomType: 0, names: [], date: 1111111111111 }
+  );

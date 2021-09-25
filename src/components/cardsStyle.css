@@ -1,0 +1,47 @@
+
+.component-square-card-content {
+  width: 300px;
+  height: 200px;
+  /* width: 600px; */
+  /* height: 400px; */
+  background-size: cover;
+  position: relative;
+}
+
+.component-square-card-content iframe {
+  position: absolute;
+  border: none;
+  left: 11%;
+  top: 37%;
+  width: 80%;
+  height: 36%;
+}
+
+.component-square-card-content span {
+  position: absolute;
+  user-select: none;
+}
+
+.component-square-card-content .component-left-number {
+  font-size: 1.6rem;
+  font-weight: bold;
+  bottom: 28%;
+  left: 14%;
+}
+
+.component-square-card-content .component-key-number {
+  font-size: 2.8rem;
+  font-weight: bold;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.component-square-card-content .component-right-number {
+  font-size: 1.6rem;
+  font-weight: bold;
+  bottom: 28%;
+  right: 14%;
+  direction:rtl;
+  unicode-bidi:bidi-override;
+}

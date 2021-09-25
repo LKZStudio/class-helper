@@ -27,5 +27,19 @@ module.exports = [
     }, {
       loader: "css-loader" // translates CSS into CommonJS
     }]
+  },
+  {
+    test: /\.(png|svg|jpg|gif)$/,
+    use: {
+      loader: 'url-loader',
+      options: {
+        name: 'assets/[name].[ext]',
+        limit: 2048
+      }
+    }
+  },
+  {
+    test: /\.html$/,
+    loader: 'html-loader'
   }
 ]

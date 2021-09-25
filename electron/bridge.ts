@@ -1,5 +1,5 @@
 import { contextBridge, ipcRenderer } from 'electron'
-import { ConfigDb } from './dbInit'
+import sql from './utils/sql'
 
 export const api = {
   /**
@@ -13,32 +13,16 @@ export const api = {
   openUrl(url: string) {
     ipcRenderer.send('open-url', url)
   },
+  
+  addName: sql.addName,
 
-  addName(names: string[]) {
-    for (let i = 0;i < names.length;i++) {
-      ConfigDb.data.names.push(names[i])
-    }
-    ConfigDb.save()
-  },
+  changeNames: sql.changeNames,
 
-  changeNames(names: string[]) {
-    ConfigDb.data.names = names
-    ConfigDb.save()
-  },
+  changeRandomType: sql.changeRandomType,
 
-  changeRandomType(type: 0 | 1) {
-    ConfigDb.data.randomType = type
-    ConfigDb.save()
-  },
+  changeDate: sql.changeDate,
 
-  changeDate(date: number) {
-    ConfigDb.data.date = date
-    ConfigDb.save()
-  },
-
-  getConfigData() {
-    return ConfigDb.data
-  },
+  getConfigData: sql.getConfigData,
 
   /**
    * Provide an easier way to listen to events

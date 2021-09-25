@@ -4,6 +4,7 @@ import path from 'path'
 let mainWindow: BrowserWindow | null
 let calendarWindow: BrowserWindow | null
 let randomWindow: BrowserWindow | null
+let lotteryDrawWindow: BrowserWindow | null
 let tray: Tray | null
 
 let forceClose = false
@@ -31,7 +32,7 @@ function createWindow () {
     }
   })
 
-  Menu.setApplicationMenu(null)
+  // Menu.setApplicationMenu(null)
   // mainWindow.webContents.openDevTools()
 
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY + "#/index")
@@ -90,6 +91,26 @@ function createRandomWindow() {
   })
 }
 
+function createLotteryDrawWindow() {
+  lotteryDrawWindow = new BrowserWindow({
+    icon: path.join(assetsPath, 'assets', 'icon.png'),
+    width: 1200,
+    height: 900,
+    webPreferences: {
+      nodeIntegration: false,
+      contextIsolation: true,
+      preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
+      webSecurity: false
+    }
+  })
+
+  lotteryDrawWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY + "#/lotteryDraw")
+  
+  lotteryDrawWindow.on('closed', () => {
+    randomWindow = null
+  })
+}
+
 async function registerListeners () {
   /**
    * This comes from bridge integration, check bridge.ts
@@ -111,7 +132,8 @@ app.whenReady().then(() => {
   tray = new Tray(path.join(assetsPath, 'assets', 'icon.png'))
   const contextMenu = Menu.buildFromTemplate([
     { label: '开关倒计时', type: 'normal', click: clickCalendarWindow },
-    { label: '打开抽奖', type: 'normal', click: createRandomWindow },
+    { label: '打开抽奖', type: 'normal', click: createLotteryDrawWindow },
+    { label: '打开点名器', type: 'normal', click: createRandomWindow },
     { label: '打开设置', type: 'normal', click: () => {mainWindow?.show();mainWindow?.focus()} },
     { label: '关闭', type: 'normal', click: () => {forceClose = true;app.quit()} },
   ])
