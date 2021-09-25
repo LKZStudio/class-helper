@@ -22,6 +22,10 @@ export const api = {
 
   changeDate: sql.changeDate,
 
+  changeCardType: sql.changeCardType,
+
+  changeNoSpecial: sql.changeNoSpecial,
+
   getConfigData: sql.getConfigData,
 
   /**

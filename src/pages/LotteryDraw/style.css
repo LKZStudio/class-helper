@@ -1,3 +1,13 @@
 .lottery-draw {
   padding: 24px;
 }
+
+.lottery-draw h1 {
+  text-align: center;
+}
+
+.lottery-draw .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

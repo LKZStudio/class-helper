@@ -48,15 +48,16 @@ export function Random() {
     window.location.reload()
   }
 
-  function randomNum(minNum: number,maxNum: number) { 
-    switch(arguments.length) { 
-      case 1: 
-          return parseInt((Math.random() * minNum + 1).toString(), 10); 
-      case 2: 
-          return parseInt((Math.random() * (maxNum - minNum + 1) + minNum).toString(), 10); 
-      default: 
-        return 0; 
+  function randomNum(min: number,max: number) { 
+    let n = max - min
+    if (n == 0) {
+        return max
+    } else if (n < 0) {
+        [max, min] = [min, max]
+        n = Math.abs(n)
     }
+
+    return ((Math.random() * ++n) >> 0) + min;
   }
 
   function changeRemoveName() {

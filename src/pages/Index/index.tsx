@@ -6,6 +6,8 @@ export function Index() {
   const [notice, setNotice] = useState("无提示")
   const [checked, setChecked] = useState(window.Main.getConfigData().randomType)
   const [names, setNames] = useState(window.Main.getConfigData().names)
+  const [numbers, setNumbers] = useState(window.Main.getConfigData().cardType)
+  const [noSpecial, setNoSpecial] = useState(window.Main.getConfigData().noSpecial)
 
   const [name, setName] = useState("")
   const [order, setOrder] = useState(0)
@@ -40,6 +42,8 @@ export function Index() {
       return "点名器"
     } else if (nowPage === "about") {
       return "关于"
+    } else if (nowPage === "luckDraw") {
+      return "抽奖"
     }
   }
 
@@ -69,6 +73,53 @@ export function Index() {
     } else {
       v(parseInt(e.target.value))
     }
+  }
+
+  function changeCardType(order: number) {
+    return (e: any) => {
+      if (order === 1) {
+        setNumbers({
+          number1: e.target.value,
+          number2: numbers.number2,
+          number3: numbers.number3,
+          number4: numbers.number4,
+          number5: numbers.number5
+        })
+      } else if (order === 2) {
+        setNumbers({
+          number1: numbers.number1,
+          number2: e.target.value,
+          number3: numbers.number3,
+          number4: numbers.number4,
+          number5: numbers.number5
+        })
+      } else if (order === 3) {
+        setNumbers({
+          number1: numbers.number1,
+          number2: numbers.number2,
+          number3: e.target.value,
+          number4: numbers.number4,
+          number5: numbers.number5
+        })
+      } else if (order === 4) {
+        setNumbers({
+          number1: numbers.number1,
+          number2: numbers.number2,
+          number3: numbers.number3,
+          number4: e.target.value,
+          number5: numbers.number5
+        })
+      } else if (order === 5) {
+        setNumbers({
+          number1: numbers.number1,
+          number2: numbers.number2,
+          number3: numbers.number3,
+          number4: numbers.number4,
+          number5: e.target.value
+        })
+      }
+    }
+    
   }
 
   function submitName(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
@@ -107,6 +158,18 @@ export function Index() {
     window.Main.changeNames(nowNames)
     setOrd(0)
     changeNotice("删除成功")
+  }
+
+  function submitCardType(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    e.preventDefault()
+    window.Main.changeCardType(numbers)
+    changeNotice("保存刮刮卡成功")
+  }
+
+  function submitNoSpecial() {
+    window.Main.changeNoSpecial(!noSpecial)
+    setNoSpecial(!noSpecial)
+    changeNotice("保存是否需要特殊刮刮卡成功")
   }
 
   function getNowDate() {
@@ -149,11 +212,30 @@ export function Index() {
     <div className="index">
       <h1>设置 - {getNowPageText()}</h1>
       <button onClick={changeNowPage('timer')}>倒计时</button>
+      <button onClick={changeNowPage('luckDraw')}>抽奖</button>
       <button onClick={changeNowPage('name')}>点名器</button>
       <button onClick={changeNowPage('about')}>关于</button>
       <p className="notice">{notice}</p>
       <div className="timer" style={getNotNowPageStyle('timer')}>
         <input type="date" onChange={changeDate} defaultValue={getNowDate()} /><br />
+      </div>
+
+      <div className="luck" style={getNotNowPageStyle('luckDraw')}>
+        <form>
+          <label htmlFor="number1">1积分个数：</label>
+          <input type="number" id="number1" value={numbers.number1} onChange={changeCardType(1)} /><br />
+          <label htmlFor="number2">2积分个数：</label>
+          <input type="number" id="number2" value={numbers.number2} onChange={changeCardType(2)} /><br />
+          <label htmlFor="number3">3积分个数：</label>
+          <input type="number" id="number3" value={numbers.number3} onChange={changeCardType(3)} /><br />
+          <label htmlFor="number4">4积分个数：</label>
+          <input type="number" id="number4" value={numbers.number4} onChange={changeCardType(4)} /><br />
+          <label htmlFor="number5">5积分个数：</label>
+          <input type="number" id="number5" value={numbers.number5} onChange={changeCardType(5)} /><br />
+          <button type="submit" onClick={submitCardType}>保存</button><br/>
+        </form>
+        <label htmlFor="noSpecial">特殊刮刮卡？</label>
+        <input type="checkbox" checked={!noSpecial} name="noSpecial" onChange={submitNoSpecial} />
       </div>
 
       <div className="name" style={getNotNowPageStyle('name')}>

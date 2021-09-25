@@ -6,6 +6,8 @@
   /* height: 400px; */
   background-size: cover;
   position: relative;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 .component-square-card-content iframe {
@@ -29,7 +31,7 @@
   left: 14%;
 }
 
-.component-square-card-content .component-key-number {
+.component-square-card-content .component-middle-number {
   font-size: 2.8rem;
   font-weight: bold;
   top: 56%;
@@ -42,6 +44,4 @@
   font-weight: bold;
   bottom: 28%;
   right: 14%;
-  direction:rtl;
-  unicode-bidi:bidi-override;
 }

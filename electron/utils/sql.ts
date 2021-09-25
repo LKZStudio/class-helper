@@ -1,3 +1,4 @@
+import { CardType } from './../dbInit';
 import { contextBridge, ipcRenderer } from 'electron'
 import { ConfigDb } from '../dbInit'
 
@@ -23,8 +24,18 @@ function changeDate(date: number) {
   ConfigDb.save()
 }
 
+function changeCardType(cardType: CardType) {
+  ConfigDb.data.cardType = cardType
+  ConfigDb.save()
+}
+
+function changeNoSpecial(type: boolean) {
+  ConfigDb.data.noSpecial = type
+  ConfigDb.save()
+}
+
 function getConfigData() {
   return ConfigDb.data
 }
 
-export default { addName, changeNames, changeRandomType, changeDate, getConfigData }
+export default { addName, changeNames, changeRandomType, changeDate, getConfigData, changeCardType, changeNoSpecial }

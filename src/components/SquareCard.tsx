@@ -5,18 +5,19 @@ import square from '../images/square.png'
 // @ts-ignore
 import scrape from '../html/scrape.html'
 
-export function SquareCard() {
+interface Props {
+  left: string
+  middle: string
+  right: string
+}
 
-  useEffect(() => {
-    console.log(scrape)
-  }, [])
-
+export function SquareCard(props: Props) {
   return (
     <div className="component-square-card">
       <div className="component-square-card-content" style={{backgroundImage: `url(${square})`}} id="square-card">
-        <span className="component-left-number">3-</span>
-        <span className="component-key-number">1</span>
-        <span className="component-right-number">1</span>
+        <span className="component-left-number">{props.left}</span>
+        <span className="component-middle-number">{props.middle}</span>
+        <span className="component-right-number">{props.right}</span>
         <iframe srcDoc={scrape}></iframe>
       </div>
     </div>
