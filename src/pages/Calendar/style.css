@@ -4,15 +4,31 @@ body {
   margin: 0;
 }
 
+.transparent-calendar {
+  -webkit-app-region: drag;
+  user-select: none;
+}
+
 .calendar {
+  user-select: none;
   width: calc(100% - 60px);
-  height: calc(100vh - 60px);
+  height: calc(100vh - 40px);
   -webkit-app-region: drag;
   overflow: hidden;
   background-color: #31574f;
   border: 20px solid #d3b78e;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.transparent-calendar h1 {
+  color: black;
+  font-size: 2.8rem;
+}
+
+.transparent-calendar p {
+  color: black;
+  font-size: 2.2rem;
 }
 
 .calendar h1 {
@@ -25,7 +41,7 @@ body {
   font-size: 2.2rem;
 }
 
-.calendar p span {
+.calendar p span, .transparent-calendar p span {
   color: red;
   background-color: white;
   padding: 4px;

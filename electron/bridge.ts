@@ -28,6 +28,8 @@ export const api = {
 
   getConfigData: sql.getConfigData,
 
+  changeTransparent: sql.changeTransparent,
+
   /**
    * Provide an easier way to listen to events
    */

@@ -34,8 +34,13 @@ function changeNoSpecial(type: boolean) {
   ConfigDb.save()
 }
 
+function changeTransparent(type: boolean) {
+  ConfigDb.data.transparent = type
+  ConfigDb.save()
+}
+
 function getConfigData() {
   return ConfigDb.data
 }
 
-export default { addName, changeNames, changeRandomType, changeDate, getConfigData, changeCardType, changeNoSpecial }
+export default { addName, changeNames, changeRandomType, changeDate, getConfigData, changeCardType, changeNoSpecial, changeTransparent }

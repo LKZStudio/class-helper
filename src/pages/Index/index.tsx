@@ -8,6 +8,7 @@ export function Index() {
   const [names, setNames] = useState(window.Main.getConfigData().names)
   const [numbers, setNumbers] = useState(window.Main.getConfigData().cardType)
   const [noSpecial, setNoSpecial] = useState(window.Main.getConfigData().noSpecial)
+  const [transparent, setTransparent] = useState(window.Main.getConfigData().transparent)
 
   const [name, setName] = useState("")
   const [order, setOrder] = useState(0)
@@ -166,6 +167,12 @@ export function Index() {
     changeNotice("保存刮刮卡成功")
   }
 
+  function submitTransparent() {
+    window.Main.changeTransparent(!transparent)
+    setTransparent(!transparent)
+    changeNotice("保存是否透明成功")
+  }
+
   function submitNoSpecial() {
     window.Main.changeNoSpecial(!noSpecial)
     setNoSpecial(!noSpecial)
@@ -218,6 +225,8 @@ export function Index() {
       <p className="notice">{notice}</p>
       <div className="timer" style={getNotNowPageStyle('timer')}>
         <input type="date" onChange={changeDate} defaultValue={getNowDate()} /><br />
+        <label htmlFor="transparent">是否透明：</label>
+        <input type="checkbox" checked={transparent} name="transparent" onChange={submitTransparent} />
       </div>
 
       <div className="luck" style={getNotNowPageStyle('luckDraw')}>

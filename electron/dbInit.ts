@@ -19,6 +19,7 @@ export interface Config {
   names: string[]
 
   date: number // 倒计时时间戳
+  transparent: boolean // 倒计时界面透明
 
   cardType: CardType
   noSpecial: boolean
@@ -26,5 +27,5 @@ export interface Config {
 
 export const ConfigDb = new Database<Config>(
   path.join(database, 'Config.json'), 
-  { randomType: 0, names: [], date: 1111111111111, cardType: { number1: 10, number2: 8, number3: 6, number4: 4, number5: 2 }, noSpecial: false }
+  { randomType: 0, names: [], date: 1111111111111, cardType: { number1: 10, number2: 8, number3: 6, number4: 4, number5: 2 }, noSpecial: false, transparent: false }
   );

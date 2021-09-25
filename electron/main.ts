@@ -3,6 +3,7 @@ import path from 'path'
 
 let mainWindow: BrowserWindow | null
 let calendarWindow: BrowserWindow | null
+let calendar2Window: BrowserWindow | null
 let randomWindow: BrowserWindow | null
 let lotteryDrawWindow: BrowserWindow | null
 let tray: Tray | null
@@ -32,7 +33,7 @@ function createWindow () {
     }
   })
 
-  // Menu.setApplicationMenu(null)
+  Menu.setApplicationMenu(null)
   // mainWindow.webContents.openDevTools()
 
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY + "#/index")
@@ -68,6 +69,29 @@ function createCalendarWindow() {
 
   calendarWindow.on('closed', () => {
     calendarWindow = null
+  })
+}
+
+function createCalendar2Window() {
+  calendar2Window = new BrowserWindow({
+    width: 500,
+    height: 100,
+    transparent: true,
+    resizable: false,
+    frame: false,
+    alwaysOnTop: true,
+    webPreferences: {
+      nodeIntegration: false,
+      contextIsolation: true,
+      preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
+      webSecurity: false
+    }
+  })
+
+  calendar2Window.loadURL(MAIN_WINDOW_WEBPACK_ENTRY + "#/calendar2")
+
+  calendar2Window.on('closed', () => {
+    calendar2Window = null
   })
 }
 
@@ -128,10 +152,19 @@ function clickCalendarWindow() {
   }
 }
 
+function clickCalendar2Window() {
+  if (calendar2Window === null || calendar2Window === undefined) {
+    createCalendar2Window()
+  } else {
+    calendar2Window.close()
+  }
+}
+
 app.whenReady().then(() => {
   tray = new Tray(path.join(assetsPath, 'assets', 'icon.png'))
   const contextMenu = Menu.buildFromTemplate([
     { label: '开关倒计时', type: 'normal', click: clickCalendarWindow },
+    { label: '开关倒计时2', type: 'normal', click: clickCalendar2Window },
     { label: '打开抽奖', type: 'normal', click: createLotteryDrawWindow },
     { label: '打开点名器', type: 'normal', click: createRandomWindow },
     { label: '打开设置', type: 'normal', click: () => {mainWindow?.show();mainWindow?.focus()} },

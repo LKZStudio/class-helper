@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './style.css'
 
-export function Calendar() {
+export function Calendar2() {
   const [date, setDate] = useState(window.Main.getConfigData().date)
   const [transparent, setTransparent] = useState(window.Main.getConfigData().transparent)
   const [left, setLeft] = useState({day: "942", hour: "22", minute: "45", second: "56"})
@@ -68,9 +68,8 @@ export function Calendar() {
   }, [trigger])
 
   return (
-    <div className={transparent ? "transparent-calendar" : "calendar"}>
-      <h1>距 {getNowDate()} 还剩：</h1>
-      <p><span className="day">{left.day}</span>天<span className="hour">{left.hour}</span>时<span className="minute">{left.minute}</span>分<span className="second">{left.second}</span>秒</p>
+    <div className={transparent ? "transparent-calendar2" : "calendar2"}>
+      <p>倒计时：<span className="day">{left.day}</span>天<span className="hour">{left.hour}</span>时<span className="minute">{left.minute}</span>分<span className="second">{left.second}</span>秒</p>
     </div>
   )
 }

@@ -1,0 +1,40 @@
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.transparent-calendar2 {
+  -webkit-app-region: drag;
+  user-select: none;
+}
+
+.calendar2 {
+  user-select: none;
+  width: calc(100% - 40px);
+  height: calc(100vh - 30px);
+  -webkit-app-region: drag;
+  overflow: hidden;
+  background-color: #31574f;
+  border: 15px solid #d3b78e;
+  padding-left: 10px;
+  /* padding-right: 10px; */
+}
+
+.calendar2 p {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.transparent-calendar2 p {
+  color: black;
+  font-size: 1.2rem;
+}
+
+.calendar2 p span, .transparent-calendar2 p span {
+  color: red;
+  background-color: white;
+  padding: 2px;
+  margin-left: 4px;
+  font-size: 1.6rem;
+}
